@@ -1,0 +1,19 @@
+.wrapper{
+    max-width: 800px;
+    display: flex;
+
+    /* center */
+    justify-content: center;
+    align-items: center;
+
+
+    flex-direction: column;
+    
+
+    margin: 0 auto;
+    flex-wrap: nowrap;
+}
+.buttons{
+    display: flex;
+    flex-wrap: wrap;
+}

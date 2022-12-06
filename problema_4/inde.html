@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prueba 1</title>
+    <link rel="stylesheet" href="https://unpkg.com/chota@latest" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div>
+        <h1>Problema 4</h1>
+        <h3>Consigna:</h3>
+        <p>
+          Dado un arreglo de números (cualquiera) sacar la siguiente
+          información:
+        </p>
+        <ul>
+          <li>Cantidad de elementos del arreglo.</li>
+          <li>Porcentaje de números pares e impares.</li>
+          <li>Porcentaje de números mayores a 1000.</li>
+          <li>Cuál es el mayor y menor valor.</li>
+          <li>
+            Asuma los siguientes indicadores: Tome en cuenta que el mayor número
+            representa el 100%, indique cual es el porcentaje del número mínimo
+            y elporcentaje del promedio de todos los números.
+          </li>
+        </ul>
+        <p>El array de la variación 1 es: [9, 365, 998, 51, 859, 999, 434, 681, 10, 170]</p>
+        <p>El array de la variación 2 es: [1, 33, 18, 14, 45, 21, 22, 28, 12, 46, 18, 40, 39, 31, 4]</p>
+      </div>
+      <div>
+          <div class="buttons">
+              <a class="button primary" id="f_1">Variación 1</a>
+              <a class="button primary" id="f_2">Variación 2</a>
+          </div>
+          <div id="result">
+            <p id="count"></p>
+            <p id="max_percentage"></p>
+            <p id="max_value"></p>
+            <p id="min_value"></p>
+            <p id="odd_percent"></p>
+            <p id="even_percent"></p>
+          </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="dom.js"></script>
+  </body>
+</html>
