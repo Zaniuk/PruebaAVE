@@ -1,0 +1,33 @@
+.rows{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.rows img{
+    aspect-ratio: 3/2;
+    width: calc(50% - 5px);
+    object-fit: cover;
+}
+
+.odd-rows img:first-child{
+    width: 100%;
+    aspect-ratio: 10/4;
+    object-fit: cover;
+}
+.even-rows img:first-child{
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+.toolbar .fields form{
+    margin: 0 auto;
+    max-width: 400px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: flex-end;
+}
+.toolbar .fields form button{
+    height: 4.2rem;
+}
