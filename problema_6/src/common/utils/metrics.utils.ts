@@ -1,11 +1,9 @@
-export const convertToMetric = (value: number | undefined, unit : string): string => {
-    if(value){
-        if(unit === 'm'){
-            return value <= 10 ? String(value * 10) + 'cm': String(value / 10) + 'm';
-        }
-        if(unit === 'kg'){
-            return value <= 10 ? String(value * 10) + 'g': String(value / 10) + 'kg';
-        }
-    }
-    return '0'
+
+export const decagramToKg = (value: number) => {
+    if(!value) return 0;
+    return value / 10;
+};
+export const decameterToM = (value: number) => {
+    if(!value) return 0;
+    return value / 10;
 }
