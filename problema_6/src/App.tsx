@@ -1,8 +1,11 @@
+import Home from "./pages/Home/Home"
+import {QueryClient, QueryClientProvider} from 'react-query'
 function App() {
+  const queryClient = new QueryClient()
   return (
-    <div>
-      <h1>Contador</h1>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <Home/>
+    </QueryClientProvider>
   )
 }
 
