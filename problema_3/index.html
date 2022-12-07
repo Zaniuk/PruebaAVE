@@ -1,0 +1,50 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba 1</title>
+    <link rel="stylesheet" href="https://unpkg.com/chota@latest">
+</head>
+<body>
+    <div class="container">
+        <h1>Problema 3</h1>
+        <h3>Requerimentos</h3>
+        <ul>
+            <li>Debe tener al menos 16 caracteres.</li>
+            <li>Debe tener letras minúsculas y mayúsculas.</li>
+            <li>No puede tener 2 letras iguales consecutivas.</li>
+            <li>Debe contener al menos 4 números.</li>
+            <li>No puede tener 2 números iguales consecutivos.</li>
+            <li>Debe tener al menos 2 caracteres especiales (!@#$%ˆ&*-_+=?) pero ninguno de ellos puede repetirse en ninguna posición y además los caracteres no pueden estar juntos.</li>
+            <li>No se puede usar el número 0.</li>
+            <li>No se puede colocar espacios.</li>
+        </ul>
+        <hr>
+        <p>
+            Como contraseña valida usé de ejemplo 'Aa153!n@#%9kf$?4hj' <br>
+            Como contraseña no valida usé de ejemplo 'Aa1!@#$%&*-_+=?'
+        </p>
+        <hr>    
+        <button class="button primary" id="truthy-password">Probar password válido</button>
+        <button class="button primary" id="falsy-password">Probar password no válido</button>
+        <hr>
+        <div id="result">
+            <ul>
+                <li id="length"></li>
+                <li id="lowercase"></li>
+                <li id="uppercase"></li>
+                <li id="consecutive-characters"></li>
+                <li id="numbers"></li>
+                <li id="nozero"></li>
+                <li id="nospaces"></li>
+                <li><b id="isvalid"></b></li>
+            </ul>
+        </div>
+
+    </div>
+    <script src="main.js"></script>
+    <script src="dom.js"></script>
+</body>
+</html>
