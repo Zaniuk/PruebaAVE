@@ -1,30 +1,41 @@
 import { Task } from "../types/Task";
 
+
 export class TaskService {
     
-    private tasks: Task[] = [
-        
-        {
-            id: '1',
-            title: 'Task 1',
-            description: 'Description 1',
-            date: '2020-01-01',
-            priority: 'Low',
-            completed: false
-        }
-    ];
+    // private storage: UserStorage = new UserStorage('tasks');
+    
+
     getTasks(): Task[] {
-        return this.tasks;
+        // get from storage
+
+        const tasks = localStorage.getItem('tasks');
+        if (tasks) {
+            return JSON.parse(tasks);
+        }
+        return [];
+    }   
+    getTask(id: string): Task | undefined {
+        const tasks = this.getTasks();
+        return tasks.find(t => t.id === id);
     }
     createTask(task: Task): void {
-        task.id = (this.tasks.length + 1).toString();
-        this.tasks.push(task);
+        const tasks = this.getTasks();
+        task.id = String(tasks.length + 1);
+        tasks.push(task);
+        localStorage.setItem('tasks', JSON.stringify(tasks));
     }
     updateTask(task: Task): void {
-        const index = this.tasks.findIndex(t => t.id === task.id);
-        this.tasks[index] = task;
+        const tasks = this.getTasks();
+        const taskIndex = tasks.findIndex(t => t.id === task.id);
+        tasks[taskIndex] = task;
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+
     }
-    deleteTask(id: string): void {
-        this.tasks = this.tasks.filter(task => task.id !== id);
+    deleteTask(task: Task): void {
+        const tasks = this.getTasks();
+        const taskIndex = tasks.findIndex(t => t.id === task.id);
+        tasks.splice(taskIndex, 1);
+        localStorage.setItem('tasks', JSON.stringify(tasks));
     }
 }

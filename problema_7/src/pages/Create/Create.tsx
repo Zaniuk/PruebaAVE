@@ -3,11 +3,10 @@ import { Container, Typography, Grid, Button, Box } from "@mui/material";
 import { Formik, FormikHelpers, FormikProps, Form, Field } from "formik";
 import { FormTextField } from "./FormTextField";
 import * as yup from 'yup'
-import { DatePicker } from "./DatePicker";
 import { CompletedCheck } from "./CompletedCheck";
 import { PriorityRadio } from "./PriorityRadio";
-import { TaskService } from "../../common/services/TaskService";
-
+import {useNavigate} from 'react-router-dom'
+import { TaskServiceContext } from "../../common/services/TaskServiceProvider";
 interface FormValues {
   title: string;
   description: string;
@@ -23,7 +22,8 @@ const validationSchema = yup.object().shape({
 });
 
 export default function Create() {
-  const taskService = new TaskService();
+  const taskService = React.useContext(TaskServiceContext)
+  const navigate = useNavigate();
   return (
     <Container maxWidth="md">
       <Formik
@@ -40,6 +40,7 @@ export default function Create() {
           formikHelpers: FormikHelpers<FormValues>
         ) => {
           taskService.createTask(values);
+          navigate('/')
           formikHelpers.setSubmitting(false);
 
         }}
