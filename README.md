@@ -2,4 +2,4 @@
 
 Dentro de cada carpeta encontrará instrucciones para ejecutar cada solución
 
-Nota: el problema 7 no está terminado.
+Nota: La carpeta problema_7 es una versión no terminada. Usar solamente la solución de la carpeta problema_7_fs
