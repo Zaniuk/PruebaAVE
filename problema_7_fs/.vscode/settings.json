@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "pruebaAVE",
+            "database": "${workspaceFolder:problema_7_fs}/server/db.development.sqlite"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
