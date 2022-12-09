@@ -14,6 +14,7 @@ import {
 } from "@mui/material";
 
 import httpService from "../../common/services/httpService";
+import { taskService } from "../../common/services/taskService";
 
 function TaskForm() {
   const navigate = useNavigate();
@@ -40,12 +41,11 @@ function TaskForm() {
     onSubmit:  async (values) => {
       try {
         if (id) {
-
-          await httpService.put(`/tasks/${id}`, values).then(() => {
+          await taskService.update(id, values).then(() => {
             navigate("/");
           });
         } else {
-          await httpService.post("/tasks", values).then(() => {
+          await taskService.create(values).then(() => {
             navigate("/");
           });
         }
@@ -56,7 +56,7 @@ function TaskForm() {
   });
   const getTask = async (id) => {
     try {
-      const task = await httpService.get(`/tasks/${id}`);
+      const task = await taskService.get(id)
       setData(task.data);
     } catch (error) {
       console.log(error);

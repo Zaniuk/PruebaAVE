@@ -4,6 +4,8 @@ import React from "react";
 import { useEffect } from "react";
 import TableItem from "./TableItem";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { TasksContext } from "../../../../common/context/TasksContext";
 
 const StyledTableCell = ({children}) => {
     return (
@@ -17,16 +19,19 @@ const StyledTableCell = ({children}) => {
     )
 }
 function CustomTable() {
+  const {tasks, getTasks} = useContext(TasksContext)
+  getTasks()
+
   const navigate = useNavigate();
-    const [tasks, setTasks] = React.useState([]);
-    const getTasks = async () => {
-        const response = await httpService.get('/tasks')
-        console.log(response.data)
-        setTasks(response.data)
-    }
-    useEffect(() => {
-        getTasks() 
-    },[])
+    // const [tasks, setTasks] = React.useState([]);
+    // const getTasks = async () => {
+    //     const response = await httpService.get('/tasks')
+    //     console.log(response.data)
+    //     setTasks(response.data)
+    // }
+    // useEffect(() => {
+    //     getTasks() 
+    // },[])
   return (
     <TableContainer component={Paper} elevation={6}>
     <Table>
