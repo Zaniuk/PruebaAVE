@@ -19,8 +19,8 @@ const StyledTableCell = ({children}) => {
     )
 }
 function CustomTable() {
-  const {tasks, getTasks} = useContext(TasksContext)
-  getTasks()
+  const {tasks} = useContext(TasksContext)
+  
 
   const navigate = useNavigate();
     // const [tasks, setTasks] = React.useState([]);
